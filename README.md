@@ -1,3 +1,16 @@
+#Trabajo practico de Programacion en nuevas tecnologias
+#Primer cuatrimestre del 2025
+#Grupo 3
+
+#Requerimiento
+
+Se debe realizar una pagina web de una concesionaria de autos
+Se debe poder tener un listado de usuarios y productos
+Me debe permitir hacer la compra de un auto que esta en el listado de productos
+Entidades fundamentales: Usuario y Producto
+Me debe permitir ver el stock de los autos
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
