@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from "react";
+import Cabecera from "./components/Cabecera/Cabecera";
+import HomePage from './components/Home/HomePage';
+import ProductoPage from './components/Producto/ProductoPage';
+import PieDePagina from "./components/Pie/PieDePagina";
 
 function App() {
+  const [carritoCantidad, setCarritoCantidad] = useState(0);
+
+  const handleComprar = () => {
+    setCarritoCantidad(carritoCantidad + 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Cabecera carritoCantidad={carritoCantidad} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/productos" element={<ProductoPage handleComprar={handleComprar} />} />
+      </Routes>
+      <PieDePagina />
+    </Router>
   );
 }
 
